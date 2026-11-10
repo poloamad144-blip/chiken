@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
+  --color-chiken-red: #C8102E;
+  --color-chiken-darkred: #92051C;
+  --color-chiken-black: #0B0B0B;
+  --color-chiken-dark: #151111;
+  --color-chiken-gold: #F5B82E;
+  --color-chiken-cream: #FFF4E5;
+}
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0B0B0B;
+    color: #FFF4E5;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #92051C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8102E;
+}
+
+/* =========================================================================
+   PREMIUM CHIKEN BUTTON DESIGN SYSTEM (Custom Silhouettes & Light Sheen)
+   ========================================================================= */
+
+/* Asymmetric Chamfered Silhouette */
+.btn-chamfer {
+  clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+}
+
+.btn-chamfer-sm {
+  clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);
+}
+
+/* Cut-Corner Card Profile */
+.card-chamfer {
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+}
+
+/* Animated Light Sheen */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    rgba(245, 184, 46, 0.4),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: all 0.75s ease;
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  left: 140%;
+}
+
+/* Glowing & Shadow Highlights */
+.glow-red {
+  box-shadow: 0 0 40px -10px rgba(200, 16, 46, 0.55);
+}
+.glow-gold {
+  box-shadow: 0 0 35px -8px rgba(245, 184, 46, 0.45);
+}
+.shadow-crisp {
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.9), 0 0 20px -5px rgba(200, 16, 46, 0.3);
+}
